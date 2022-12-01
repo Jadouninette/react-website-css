@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Why add some function 
+
+Router in src/app.js 
+Switch in src/app.js 
+Route 
+
+## Troubleshouting 
+
+### 1.
+If some errors happens with the terms 
+> Error: ENOSPC: System limit for number of file watchers reached, watch '/home/u/work/some-repo/public'  
+
+Then enter the followings commands
+
+```bash 
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+
+sudo sysctl -p
+
+```
+
+### 2. 
+Make sure to have  react-router-dom@5.2.0 (do npm install react-router-dom@5.2.0 otherwise) because in V6 it looks like Switch has been replaced with Routes according to stack overflow [https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom]
