@@ -76,20 +76,39 @@ Router in src/app.js
 Switch in src/app.js 
 Route 
 
+  <br/>
+
+---
+
+  <br/>
+
 ## Troubleshouting 
 
-### 1.
+### 1. ENOSPC
+
 If some errors happens with the terms 
 > Error: ENOSPC: System limit for number of file watchers reached, watch '/home/u/work/some-repo/public'  
 
 Then enter the followings commands
 
-```bash 
+```console 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 
 sudo sysctl -p
 
 ```
 
-### 2. 
+### 2. nodejs
+
+Have the message error : 
+```console
+node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.28' not found (required by node)
+```
+Then enter the commmand : 
+``` console
+sudo apt-get remove nodejs  
+nvm install 16.15.1  
+```
+### 3. react-router-dom
+
 Make sure to have  react-router-dom@5.2.0 (do npm install react-router-dom@5.2.0 otherwise) because in V6 it looks like Switch has been replaced with Routes according to stack overflow [https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom]
