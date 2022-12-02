@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import './Navbar.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandSpock } from '@fortawesome/free-solid-svg-icons'
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -8,6 +11,7 @@ function NavBar() {
   const handleClick = () => setClick(!click) 
   // funtion that change the actual value of click to the opposite to reset the value
   const closeMobileMenu = () => setClick(false);
+
   // function 
   return (
     <div>
@@ -15,7 +19,8 @@ function NavBar() {
       <nav className='navbar'>
         <div className='navebar-container'>
         <Link to='/' className='navbar-logo'>
-            TRLV <i className='fab fa-typo3'/>
+          <FontAwesomeIcon icon={faHandSpock} />
+           Discovery  
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times': 'fas fa-bars'} />
