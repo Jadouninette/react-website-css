@@ -15,7 +15,8 @@ function App() {
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1> Hello word </h1>
+        <h1> Hello word</h1>
+        <h2> Sorry, still in construction</h2>
       </header>
       </Switch>
       </Router>
